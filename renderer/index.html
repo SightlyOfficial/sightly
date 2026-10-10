@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<title>Sightly</title>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<header class="bar">
+  <span class="brand">Sightly</span>
+  <div class="wbtn">
+    <button id="min" aria-label="Réduire">–</button>
+    <button id="close" aria-label="Fermer">✕</button>
+  </div>
+</header>
+<main>
+  <section class="preview">
+    <div class="stage"><svg id="preview" viewBox="0 0 200 200"></svg></div>
+    <button id="eye" class="btn eye"><span id="eyeIcon">◉</span><span id="eyeLabel">Afficher</span></button>
+    <p id="status" class="status"></p>
+    <div class="row">
+      <button id="saveBtn" class="btn ghost" data-i18n="save">Sauvegarder</button>
+      <button id="pubBtn" class="btn ghost" data-i18n="publish">Publier</button>
+    </div>
+  </section>
+  <section class="side">
+    <nav class="tabs">
+      <button data-tab="settings" class="on" data-i18n="tab_settings">Réglages</button>
+      <button data-tab="library" data-i18n="tab_library">Bibliothèque</button>
+      <button data-tab="saved" data-i18n="tab_saved">Sauvegardes</button>
+      <button data-tab="prefs" data-i18n="tab_prefs">Paramètres</button>
+      <button data-tab="account" data-i18n="tab_account">Compte</button>
+    </nav>
+    <div id="settings" class="view on"><div id="controls"></div></div>
+    <div id="library" class="view"></div>
+    <div id="saved" class="view"></div>
+    <div id="prefs" class="view">
+      <div class="group"><h3 data-i18n="pr_discord">Serveur Discord</h3>
+        <button id="discordBtn" class="discord-btn">
+          <img src="assets/discord.png" alt="">
+          <span data-i18n="pr_join">Rejoindre le serveur</span>
+        </button>
+      </div>
+      <div class="group"><h3 data-i18n="pr_theme">Thème</h3>
+        <div class="seg">
+          <button data-theme-pick="system" data-i18n="th_system">Système</button>
+          <button data-theme-pick="dark" data-i18n="th_dark">Sombre</button>
+          <button data-theme-pick="light" data-i18n="th_light">Clair</button>
+        </div>
+      </div>
+      <div class="group"><h3 data-i18n="pr_lang">Langue</h3>
+        <div class="seg">
+          <button data-lang-pick="fr">Français</button>
+          <button data-lang-pick="en">English</button>
+          <button data-lang-pick="es">Español</button>
+        </div>
+      </div>
+    </div>
+    <div id="account" class="view"></div>
+  </section>
+</main>
+
+<div id="modal" class="modal hidden">
+  <div class="card">
+    <h3 id="mTitle"></h3>
+    <input type="text" id="mName" maxlength="40">
+    <div class="row">
+      <button id="mCancel" class="btn ghost">Annuler</button>
+      <button id="mOk" class="btn primary">Valider</button>
+    </div>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+
+<script src="../src/draw.js"></script>
+<script src="cloud.js"></script>
+<script src="app.js"></script>
+</body></html>
